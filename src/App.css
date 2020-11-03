@@ -37,13 +37,13 @@
   }
 }
 
-.trivia-play {
+.trivia-play, .finish {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   height: 50%;
-  width: 60%;
+  width: 50%;
   border: 15px solid #404040;
   padding: 20px;
   background-color: white;
