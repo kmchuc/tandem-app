@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { questions } from './Questions';
+import '../App.css'
 
 const seenIndex = [];
 
@@ -14,15 +15,8 @@ function shuffleIndex() {
   return randomIndex
 }
 
-
-
 const randomQuestionIndex = shuffleIndex()
 const firstQuestion = questions[randomQuestionIndex]
-
-// const correctOption = questions[randomQuestionIndex].correct
-// const incorrectOption = questions[randomQuestionIndex].incorrect
-// const allOptions = incorrectOption.concat(correctOption)
-// console.log(allOptions);
 
 function shuffleOptions(incorrectOptions, correctOption) {
   const allOptions = incorrectOptions.concat(correctOption)
@@ -61,20 +55,16 @@ const TriviaPlay = ({setFinish, score, setScore}) => {
     setCount(count + 1)
   }
 
-  function submitAnswer(answer) {
-    if (answer === question.correct) {
-      console.log('question.correct', question.correct)
+  function submitAnswer(selectedOption) {
+    if (selectedOption === question.correct) {
       setScore(score + 1)
       changeQuestion()
     } else {
       changeQuestion()
     }
   } 
-
-  console.log(score)
-
   return(
-  <div>
+  <div className="trivia-play">
     <h1>{question.question}</h1>
 
     <div onChange={e => setSelectedOption(e.target.value)}>
@@ -87,7 +77,8 @@ const TriviaPlay = ({setFinish, score, setScore}) => {
         )
       })}
     </div>
-    <button onClick={e => submitAnswer() }>change question</button>
+
+    <button onClick={e => submitAnswer(selectedOption) }>change question</button>
   </div>
   )
 }

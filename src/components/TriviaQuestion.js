@@ -1,15 +1,14 @@
-import { array } from 'prop-types';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import TriviaFinish from './TriviaFinish';
 import TriviaPlay from "./TriviaPlay";
+import '../App.css'
 
 const TriviaQuestion = () => {
   const [finish, setFinish] = useState(false)
   const [score, setScore] = useState(0)
 
-
   return (
-    <div>
+    <div className="main">
       {!finish &&
     <TriviaPlay setFinish={setFinish} score={score} setScore={setScore}/>
       }

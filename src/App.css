@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.trivia-play {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+  width: 60%;
+  border: 15px solid #404040;
+  padding: 20px;
+  background-color: white;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./images/GettyImages-1043184992.jpg');
+  background-position: center;
+  background-size: 112%;
+  background-repeat: no-repeat;
+}
+
+button {
+  padding: 5px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid black;
+  margin-top: 10px;
+}
